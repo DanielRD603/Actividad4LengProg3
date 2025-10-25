@@ -1,0 +1,21 @@
+@model ActividadUnidad2.Models.RecintoViewModel
+
+@{
+    ViewData["Title"] = "Eliminar Recinto";
+}
+
+<h2>@ViewData["Title"]</h2>
+
+<h4>¿Seguro que deseas eliminar este recinto?</h4>
+
+<div>
+    <p><strong>Código:</strong> @Model.Codigo</p>
+    <p><strong>Nombre:</strong> @Model.Nombre</p>
+    <p><strong>Dirección:</strong> @Model.Direccion</p>
+</div>
+
+<form asp-action="DeleteConfirmed" method="post">
+    <input type="hidden" asp-for="Codigo" />
+    <button type="submit" class="btn btn-danger">Eliminar</button>
+    <a asp-action="Index" class="btn btn-secondary">Cancelar</a>
+</form>

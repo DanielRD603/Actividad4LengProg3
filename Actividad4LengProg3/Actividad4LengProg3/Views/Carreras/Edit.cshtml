@@ -1,0 +1,30 @@
+@model ActividadUnidad2.Models.CarreraViewModel
+
+@{
+    ViewData["Title"] = "Editar Carrera";
+}
+
+<h2>@ViewData["Title"]</h2>
+
+<form asp-action="Edit" method="post">
+    <input type="hidden" asp-for="Codigo" />
+
+    <div class="form-group">
+        <label asp-for="Nombre"></label>
+        <input asp-for="Nombre" class="form-control" />
+        <span asp-validation-for="Nombre" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="CantidadCreditos"></label>
+        <input asp-for="CantidadCreditos" class="form-control" />
+        <span asp-validation-for="CantidadCreditos" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="CantidadMaterias"></label>
+        <input asp-for="CantidadMaterias" class="form-control" />
+        <span asp-validation-for="CantidadMaterias" class="text-danger"></span>
+    </div>
+
+    <button type="submit" class="btn btn-primary">Guardar Cambios</button>
+    <a asp-action="Index" class="btn btn-secondary">Cancelar</a>
+</form>

@@ -1,0 +1,38 @@
+@model IEnumerable<ActividadUnidad2.Models.CarreraViewModel>
+
+@{
+    ViewData["Title"] = "Gestión de Carreras";
+}
+
+<h2>@ViewData["Title"]</h2>
+
+<p>
+    <a asp-action="Create" class="btn btn-primary">Agregar Carrera</a>
+</p>
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Código</th>
+            <th>Nombre</th>
+            <th>Créditos</th>
+            <th>Materias</th>
+            <th>Acciones</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.Codigo</td>
+                <td>@item.Nombre</td>
+                <td>@item.CantidadCreditos</td>
+                <td>@item.CantidadMaterias</td>
+                <td>
+                    <a asp-action="Edit" asp-route-codigo="@item.Codigo" class="btn btn-sm btn-warning">Editar</a>
+                    <a asp-action="Delete" asp-route-codigo="@item.Codigo" class="btn btn-sm btn-danger">Eliminar</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

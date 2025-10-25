@@ -1,0 +1,9 @@
+
+@if (TempData["Ok"] != null)
+{
+  <div class="alert alert-success">@TempData["Ok"]</div>
+}
+@if (!ViewData.ModelState.IsValid && ViewData.ModelState.ErrorCount > 0)
+{
+  <div class="alert alert-danger">Revise los errores del formulario.</div>
+}

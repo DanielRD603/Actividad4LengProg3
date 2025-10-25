@@ -1,0 +1,36 @@
+@model IEnumerable<ActividadUnidad2.Models.RecintoViewModel>
+
+@{
+    ViewData["Title"] = "Gestión de Recintos";
+}
+
+<h2>@ViewData["Title"]</h2>
+
+<p>
+    <a asp-action="Create" class="btn btn-primary">Agregar Recinto</a>
+</p>
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Código</th>
+            <th>Nombre</th>
+            <th>Dirección</th>
+            <th>Acciones</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.Codigo</td>
+                <td>@item.Nombre</td>
+                <td>@item.Direccion</td>
+                <td>
+                    <a asp-action="Edit" asp-route-codigo="@item.Codigo" class="btn btn-sm btn-warning">Editar</a>
+                    <a asp-action="Delete" asp-route-codigo="@item.Codigo" class="btn btn-sm btn-danger">Eliminar</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
